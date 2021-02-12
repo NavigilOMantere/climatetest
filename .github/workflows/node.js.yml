@@ -1,0 +1,25 @@
+name: Node.js CI
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14]
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v1
+    - run: npm ci --unsafe-perm
+    - name: Test and code coverage
+      uses: paambaati/codeclimate-action@v2.7.5
+      env:
+        CC_TEST_REPORTER_ID: c98499833594777b230186aae04da19ba2929274f39473c04b4e5d846b8898ef
+      with:
+        coverageCommand: npm test
+        coverageLocations: |
+          ${{github.workspace}}/coverage/lcov.info:lcov

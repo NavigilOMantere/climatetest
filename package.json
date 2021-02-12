@@ -1,0 +1,23 @@
+{
+  "name": "climatetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx nyc --reporter=lcov --reporter=text mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NavigilOMantere/climatetest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NavigilOMantere/climatetest/issues"
+  },
+  "homepage": "https://github.com/NavigilOMantere/climatetest#readme",
+  "devDependencies": {
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0"
+  }
+}
